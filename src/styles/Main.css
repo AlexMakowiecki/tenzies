@@ -1,0 +1,96 @@
+main{
+  width: 90vw;
+  max-width: 37.6875rem;
+  padding: 0 10% 3rem; /* 4rem ==> 64px */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background-color:#F5F5F5;
+  border-radius: 15px;
+  box-sizing:border-box;
+}
+
+
+h1,
+.explanation{
+  margin: 0;
+  text-align:center;
+}
+
+h1{
+  margin-bottom: 0.2em;
+  color: #2B283A;
+  font-size: 3rem; 
+  font-family: "Karla"; 
+  letter-spacing: -0.03em;
+}
+
+.explanation{
+  color: #4A4E74;
+  font-size: 1.625rem;
+  font-family: "Inter";
+}
+
+.dice-container{
+  margin-block: 3rem;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.roll-button{
+  margin-inline: auto;
+  padding: 0.35em 1.5em;
+  display:block;
+  background-color:#5035FF;
+  border: none;
+  border-radius: 7.5px;
+  color: #FFF;
+  font-size: 2rem;
+  font-family: "Karla";
+}
+
+.roll-button:hover,
+.roll-button:focus{
+  background-color: #432dd3;
+}
+
+.tenzies__header{
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+  height: 4rem;
+  padding-top: 1.4rem;
+  box-sizing:border-box;
+}
+
+.counters > div{
+  display:flex;
+  gap: 0.5rem;
+  color: #2B283A;
+  font-size: 1.125rem;
+}
+
+.counters{
+  display:flex;
+  gap: .6rem;  
+}
+
+.timer span{
+  width: 2.9em;
+}
+
+.leaderboard-button{
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  border:none;
+  background:none;
+}
+
+.leaderboard-button:not(:disabled):hover{
+  transform: scale(1.1)
+}

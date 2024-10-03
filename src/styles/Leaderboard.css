@@ -1,0 +1,84 @@
+.leaderboard{
+  width: 85vw;
+  max-width: 27.5rem;
+  position:absolute;
+  z-index: 2;
+  background-color:#F5F5F5;
+  border-radius: 15px;
+  box-shadow: 2px 2px 50px 0px rgba(0, 0, 0, 0.404);
+  box-sizing: border-box;
+  overflow:hidden;
+}
+
+.leaderboard__close-button{
+  padding: 0;
+  grid-column: 1 / -1;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  border-top-right-radius: .8rem;
+  overflow: hidden;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+
+.leaderboard__main-title{
+  margin: 0;
+  padding-block: 1.5rem 1rem;
+  text-transform: uppercase;
+  text-align:center;
+  font-size: 1.75rem;
+  color:white;
+  background-color:#000000e5; 
+  align-self:normal;
+}
+
+.leaderboard-section,
+.user-score-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-block: 1.5rem;
+}
+
+.leaderboard__type-selection{
+  display:flex;
+  gap: 0.5rem;
+}
+
+.leaderboard__type-selection > button {
+  padding: 0.1em 0.2em;
+  background:none;
+  border:none;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+
+.leaderboard__type-selection > button:hover{
+  transform: scale(1.05)
+}
+
+
+.leaderboard .user-score-section{
+  padding-top: 0;
+}
+
+
+.leaderboard__subtitle{
+  padding-block: 0.25em;
+  align-self:normal;
+  color:white;
+  background-color: gray;
+  font-size: 1.2rem;
+  text-align:center;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+

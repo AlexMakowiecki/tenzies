@@ -1,0 +1,67 @@
+.dice{
+  width: 4.375rem; /* 70px */
+  height: 4.375rem;
+  padding: .5rem; /* 8px */
+  display:grid;
+  grid-template-areas:
+    "dot1 dot2 dot3"
+    "dot4 dot5 dot6"
+    "dot7 dot8 dot9";
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.325rem;
+  background-color: #FFF;
+  border:none;
+  border-radius: 15%;
+  box-shadow: 0px 2px 2px 0px #00000026;
+  box-sizing:border-box;
+  color: #2B283A;
+  font-family: "Karla";
+  font-size: 2.5rem; /* 40px */
+  border: 4px solid #2B283A;
+}
+
+
+.dice:hover,
+.dice:focus{
+  background-color: #ececec;
+}
+
+.dice.locked{
+  background-color: #59E391;
+}
+
+.dot{
+  width: 100%;
+  height: 100%;
+  background-color:#2B283A;
+  border-radius: 100%;
+}
+
+.dot-1{
+  grid-area: dot1
+}
+.dot-2{
+  grid-area: dot2
+}
+.dot-3{
+  grid-area: dot3
+}
+.dot-4{
+  grid-area: dot4
+}
+.dot-5{
+  grid-area: dot5
+}
+.dot-6{
+  grid-area: dot6
+}
+.dot-7{
+  grid-area: dot7
+}
+.dot-8{
+  grid-area: dot8
+}
+.dot-9{
+  grid-area: dot9
+}

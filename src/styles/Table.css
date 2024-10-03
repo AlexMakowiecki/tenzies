@@ -1,0 +1,16 @@
+.table__row{
+  display:grid;
+  column-gap: 2%;
+  place-items:center;
+}
+
+.table__head{
+  text-transform:capitalize;
+}
+
+.table__row:not(.table__head){
+  border: 2px solid black;
+  padding-block: .5em;
+  border-radius: .5em;
+  margin-bottom: .75rem;
+}

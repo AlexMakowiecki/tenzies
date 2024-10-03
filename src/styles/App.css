@@ -1,0 +1,35 @@
+body,html{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color:#0B2434;
+  display:grid;
+  place-content:center;
+  min-height: 100vh;
+  font-family: "Karla";
+}
+
+button{
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+button:not(:disabled){
+  cursor: pointer;
+}
+
+.blurred-background{
+  position:absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+}
+
+
