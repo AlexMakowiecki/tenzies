@@ -1,7 +1,14 @@
 main{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: .5rem;
+}
+
+.game-container{
   width: 90vw;
   max-width: 37.6875rem;
-  padding: 0 10% 3rem; /* 4rem ==> 64px */
+  padding: 0 10% 3rem; 
   display:flex;
   flex-direction:column;
   align-items:center;

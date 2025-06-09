@@ -39,34 +39,42 @@ export default function Leaderboard(props){
     <>
       <div className="blurred-background"></div>
       <div className="leaderboard">
+        <div className="leaderboard__head">
+          <button className="leaderboard__close-button" onClick={() => props.setLeaderboardOn(false)}>
+            <FontAwesomeIcon icon={faRectangleXmark}/>
+          </button>
+          <h2 className="leaderboard__main-title">Leaderboard</h2>
+        </div>
+        <div className="leaderboard__content">
+          <section className="leaderboard-section">
+            {(props.leaderboardData.length > 0)
+              ? <>
+                  <div className="leaderboard__type-selection">
+                    <button onClick={() => setType({ time:true, rolls:false })}> Fastest </button>
+                    <button onClick={() => setType({ time:false, rolls:true })}> Luckiest </button>
+                    <button onClick={() => setType({ time:true, rolls:true })}> Fastest & Luckiest </button>
+                  </div>
+                  <Table dataArray={tableData} rowsPerPage={4}/>
+                </>
+              : <p className="leaderboard__empty-message">No scores yet</p>}
+          </section>
+          
+          {props.gameWon && <section className="user-score-section">
+            <h3 className="leaderboard__subtitle">Your score</h3>
+            <ScoreForm
+              leaderboardData = {props.leaderboardData}
+              setLeaderboardData = {props.setLeaderboardData}
+              playerStats = {props.playerStats}
+              playerName = {props.playerName}
+              setPlayerName = {props.setPlayerName}
+              type = {type}
+              sortPlayers = {sortPlayers}
+            />
+          </section>}
+      </div>
 
-        <button className="leaderboard__close-button" onClick={() => props.setLeaderboardOn(false)}>
-          <FontAwesomeIcon icon={faRectangleXmark}/>
-        </button>
 
-        <h2 className="leaderboard__main-title">Leaderboard</h2>
-
-        <section className="leaderboard-section">
-          <div className="leaderboard__type-selection">
-            <button onClick={() => setType({ time:true, rolls:false })}> Fastest </button>
-            <button onClick={() => setType({ time:false, rolls:true })}> Luckiest </button>
-            <button onClick={() => setType({ time:true, rolls:true })}> Fastest & Luckiest </button>
-          </div>
-          <Table dataArray={tableData} rowsPerPage={4}/>
-        </section>
         
-        {props.gameWon && <section className="user-score-section">
-          <h3 className="leaderboard__subtitle">Your score</h3>
-          <ScoreForm
-            leaderboardData = {props.leaderboardData}
-            setLeaderboardData = {props.setLeaderboardData}
-            playerStats = {props.playerStats}
-            playerName = {props.playerName}
-            setPlayerName = {props.setPlayerName}
-            type = {type}
-            sortPlayers = {sortPlayers}
-          />
-        </section>}
       </div>
     </>
   )

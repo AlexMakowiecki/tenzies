@@ -1,7 +1,7 @@
 .leaderboard{
   width: 85vw;
   max-width: 27.5rem;
-  position:absolute;
+  position: absolute;
   z-index: 2;
   background-color:#F5F5F5;
   border-radius: 15px;
@@ -36,12 +36,13 @@
   align-self:normal;
 }
 
+
 .leaderboard-section,
 .user-score-section{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-block: 1.5rem;
+  padding-block: 1rem;
 }
 
 .leaderboard__type-selection{
@@ -75,8 +76,9 @@
   font-size: 1.2rem;
   text-align:center;
   margin: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
+
 
 
 

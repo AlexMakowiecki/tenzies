@@ -127,43 +127,42 @@ export default function Main(){
 
   return (
     <main>
+      <div className="game-container">
+        <div className="tenzies__header">
+          <div className="counters">
+            <Timer seconds={playerStats.seconds}/>
+            <RollCounter rolls={playerStats.rolls}/>
+          </div>
+          <button className="leaderboard-button" onClick={() => setLeaderboardOn(true)} disabled={gameOn}>
+            <FontAwesomeIcon icon={faRankingStar}/>
+          </button>
+        </div>
 
+        {(gameWon) ? <h1>You win!</h1> : <h1>Tenzies</h1>  }
+    
+        <p className="explanation">
+          {(gameWon)
+            ? "Now you can add your score to the leaderboard. Click the leaderboard icon to add it"
+            : "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."}
+        </p>
+          
+        <div className="dice-container">
+          {diceElements}
+        </div>
+        {(gameWon)
+          ? <button className="roll-button" onClick={restartGame}>New Game</button>
+          : <button className="roll-button" onClick={handleRoll}>Roll</button>}
+      </div>
       { leaderboardData && leaderboardOn && 
         <Leaderboard 
           leaderboardData = {leaderboardData}
           setLeaderboardData = {setLeaderboardData}
           playerStats = {playerStats}
           setLeaderboardOn = {setLeaderboardOn}
-          gameWon = {true}
+          gameWon = {gameWon}
           playerName = {playerName}
           setPlayerName = {setPlayerName}
         />}
-
-
-      <div className="tenzies__header">
-        <div className="counters">
-          <Timer seconds={playerStats.seconds}/>
-          <RollCounter rolls={playerStats.rolls}/>
-        </div>
-        <button className="leaderboard-button" onClick={() => setLeaderboardOn(true)} disabled={gameOn}>
-          <FontAwesomeIcon icon={faRankingStar}/>
-        </button>
-      </div>
-
-      {(gameWon) ? <h1>You win!</h1> : <h1>Tenzies</h1>  }
-   
-      <p className="explanation">
-        {(gameWon)
-          ? "Now you can add your score to the leaderboard. Click the leaderboard icon to add it"
-          : "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."}
-      </p>
-         
-      <div className="dice-container">
-        {diceElements}
-      </div>
-      {(gameWon)
-        ? <button className="roll-button" onClick={restartGame}>New Game</button>
-        : <button className="roll-button" onClick={handleRoll}>Roll</button>}
     </main>
   )
 }

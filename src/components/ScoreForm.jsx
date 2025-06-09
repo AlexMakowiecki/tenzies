@@ -41,24 +41,23 @@ export default function ScoreForm(props){
   return (
     <form className="score-form">
       <div className="score-form__form-content" style={{gridTemplateColumns:"1fr ".repeat(columns)}}>
-        <span className="score-form__name">{`#${(playerPosition).toString().padStart(2,"0")}`}</span>
-        <span className="score-form__name-container">{props.playerName
-          ? <span className="score-form__name">{playerName}</span>
-          : <input 
+        <span>{`#${(playerPosition).toString().padStart(2,"0")}`}</span>
+        <span className="score-form__name-container">
+          <input 
             className="score-form__name-input"
             name="name"
             value={formData.name}
             placeholder = "User" 
             onChange = {handleChange} 
-            readOnly={props.playerName} 
-            maxLength="4"/>}
+            readOnly={props.playerName}
+            maxLength="4"/>
         </span>
         {props.type.time && <span>{timeParser(props.playerStats.seconds)}</span>}
         {props.type.rolls && <span>{props.playerStats.rolls}</span>}
       </div>
 
-      {!props.playerName && 
-        <button className="score-form__submit-button" onClick={submitScore}>
+      {!props.playerName &&
+        <button className="score-form__submit-button" onClick={submitScore} disabled={!formData.name} type="button">
           <span>Submit score</span>
         </button>}
     </form>

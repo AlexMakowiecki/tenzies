@@ -18,6 +18,7 @@
     "vite": "latest"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "*"
+    "@vitejs/plugin-react": "*",
+    "cross-env": "^7.0.3"
   }
 }

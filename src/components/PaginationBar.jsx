@@ -1,36 +1,37 @@
 import "../styles/PaginationBar.css"
 
-export default function PaginationBar({currentPage, setCurrentPage, maxPages})
+export default function PaginationBar({ pageIndex, setPageIndex, cantPages })
 {
+  console.log("Rendering PaginationBar", { pageIndex, cantPages })
   return (
   <div className="pagination-bar">
     <button 
       className="pagination-bar__button"
-      onClick={() => setCurrentPage(0)}
-      disabled={currentPage === 0}>  
+      onClick={() => setPageIndex(0)}
+      disabled={pageIndex === 0}>  
         {"<<"}
     </button>
 
     <button
       className="pagination-bar__button" 
-      onClick={() => setCurrentPage(prevCurrentPage => prevCurrentPage - 1)}
-      disabled={currentPage === 0}>
+      onClick={() => setPageIndex(prevPageIndex => prevPageIndex - 1)}
+      disabled={pageIndex === 0}>
         {"<"}
     </button>
 
-    <span className="pagination-bar__page-display">Page {currentPage+1}</span>
+    <span className="pagination-bar__page-display">Page {pageIndex + 1}</span>
 
     <button
       className="pagination-bar__button"
-      onClick={() => setCurrentPage(prevCurrentPage => prevCurrentPage + 1)}
-      disabled={currentPage === maxPages}>
+      onClick={() => setPageIndex(prevPageIndex => prevPageIndex + 1)}
+      disabled={pageIndex === cantPages-1}>
         {">"}
     </button>
 
     <button 
       className="pagination-bar__button" 
-      onClick={() => setCurrentPage(maxPages)}
-      disabled={currentPage === maxPages}>
+      onClick={() => setPageIndex(cantPages-1)}
+      disabled={pageIndex === cantPages-1}>
         {">>"}
     </button>
   </div>
